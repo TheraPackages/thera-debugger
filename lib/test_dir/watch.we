@@ -61,7 +61,9 @@
       },
 
       thumbClick: function() {
-        this.counter++;
+        var i = 1;
+        var j = 2.0;
+        var k = 'kkk';
         console.log('Thumb click counter=' + this.counter);
       }
     },
