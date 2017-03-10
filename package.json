@@ -17,6 +17,15 @@
     "jquery": "~3.1.1",
     "tcp-port-used": "~0.1.2",
     "weex-devtool": "^0.2.53",
-    "ws": "1.1.1"
+    "ws": "1.1.1",
+    "thera-debug-common-types": "0.1.4"
+  },
+  "providedServices": {
+    "thera-debug-protocol": {
+      "description": "Does a useful thing",
+      "versions": {
+        "1.0.0": "provideDebugService"
+      }
+    }
   }
 }

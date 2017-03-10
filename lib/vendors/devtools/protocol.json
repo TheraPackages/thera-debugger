@@ -1069,6 +1069,14 @@
                     "handlers": [
                         "browser"
                     ]
+                },
+                {
+                    "name": "setOverlayMessage",
+                    "parameters": [
+                        { "name": "message", "type": "string", "optional": true, "description": "Overlay message to display when paused in debugger." }
+                    ],
+                    "hidden": true,
+                    "description": "Sets overlay message."
                 }
             ],
             "events": [
@@ -10808,6 +10816,11 @@
                 {
                     "name": "runIfWaitingForDebugger",
                     "description": "Tells inspected instance to run if it was waiting for debugger to attach."
+                },
+                {
+                    "name": "run",
+                    "hidden": true,
+                    "description": "Tells inspected instance(worker or page) that it can run in case it was started paused."
                 },
                 {
                     "name": "enable",

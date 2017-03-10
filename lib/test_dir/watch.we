@@ -1,5 +1,5 @@
 <template>
-  <div style="height: {{stubHeight}}">
+  <div style="height: {{stubHeight}}; width: 750;">
     <div class="cell">
         <image class="thumb" src="http://img.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/i1/TB10dVLOXXXXXcGXpXX.ITU.VXX_082802.jpg_310x310.jpg"></image>
         <div style="margin-left: 20; margin-right: 20; padding: 5; border-width:10;">
@@ -13,7 +13,7 @@
           <text style="margin-top: 20;">Thera</text>
         </div>
     </div>
-    <div style="flex-direction: row;">
+    <div style="flex-direction: row;" onclick="thumbClick">
       <image class="thumb-sub" src="https://gw.alicdn.com/tps/TB15WGuOVXXXXa.XXXXXXXXXXXX-375-185.png"></image>
       <image class="thumb-sub thumb-stretch" src="https://gw.alicdn.com/tps/TB15WGuOVXXXXa.XXXXXXXXXXXX-375-185.png"></image>
       <image class="thumb-sub thumb-contain" src="https://gw.alicdn.com/tps/TB15WGuOVXXXXa.XXXXXXXXXXXX-375-185.png"></image>
@@ -25,7 +25,7 @@
 <style>
   .cell { margin-top: 10; margin-left: 10; margin-bottom: 10; flex-direction: row; background-color: #ffffff; }
   .thumb { width: 200; height: 200; border-radius: 30; }
-  .thumb-sub { width: 100; height: 100; margin-left: 10;}
+  .thumb-sub { width: 100; height: 100; margin-left: 10; }
   .thumb-stretch { resize: stretch; opacity: 0.5; }
   .thumb-contain { resize: contain; opacity: 0.75; }
   .thumb-cover { resize: cover; }
@@ -41,6 +41,7 @@
 
 <script>
   var globalEvent = require('@weex-module/globalEvent');
+  var counter = 0;
   module.exports = {
     data: {
       stubHeight: 400
@@ -48,10 +49,20 @@
     methods: {
       logCreated: function(params) {
         console.log('Lifecycle message of created from .we template', params);
+        console.log('log ' + console.log);
+        console.debug('debug ' + console.debug);
+        console.info('info ' + console.info);
+        console.warn('warn ' + console.warn);
+        console.error('error ' + console.error);
       },
 
       logDestroyed: function(params) {
         console.log('Lifecycle message of destroyed from .we template', params);
+      },
+
+      thumbClick: function() {
+        this.counter++;
+        console.log('Thumb click counter=' + this.counter);
       }
     },
 
