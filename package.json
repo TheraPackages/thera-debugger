@@ -1,0 +1,22 @@
+{
+  "name": "thera-debugger",
+  "main": "./lib/thera-debugger",
+  "version": "1.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "--activationCommands": {
+    "atom-workspace": "thera-debugger:toggle"
+  },
+  "repository": "https://github.com/atom/thera-debugger",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "ip": "^1.1.4",
+    "jquery": "~3.1.1",
+    "tcp-port-used": "~0.1.2",
+    "weex-devtool": "^0.2.53",
+    "ws": "1.1.1"
+  }
+}

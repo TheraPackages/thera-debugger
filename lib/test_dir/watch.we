@@ -1,0 +1,71 @@
+<template>
+  <div style="height: {{stubHeight}}">
+    <div class="cell">
+        <image class="thumb" src="http://img.alicdn.com/bao/uploaded///img.alicdn.com/bao/uploaded/i1/TB10dVLOXXXXXcGXpXX.ITU.VXX_082802.jpg_310x310.jpg"></image>
+        <div style="margin-left: 20; margin-right: 20; padding: 5; border-width:10;">
+	        <text class="title">W大标题</text>
+          <text class="title-sub title-sub1">很长的Weex标题很长的Weex标题很长的标题</text>
+          <text class="title-sub title-sub2">标题Sub2</text>
+          <text class="title-sub title-sub3">标题Sub3</text>
+          <text class="title-sub title-sub4">标题Sub4</text>
+        </div>
+        <div class="bar">
+          <text style="margin-top: 20;">Thera</text>
+        </div>
+    </div>
+    <div style="flex-direction: row;">
+      <image class="thumb-sub" src="https://gw.alicdn.com/tps/TB15WGuOVXXXXa.XXXXXXXXXXXX-375-185.png"></image>
+      <image class="thumb-sub thumb-stretch" src="https://gw.alicdn.com/tps/TB15WGuOVXXXXa.XXXXXXXXXXXX-375-185.png"></image>
+      <image class="thumb-sub thumb-contain" src="https://gw.alicdn.com/tps/TB15WGuOVXXXXa.XXXXXXXXXXXX-375-185.png"></image>
+      <image class="thumb-sub thumb-cover" src="https://gw.alicdn.com/tps/TB15WGuOVXXXXa.XXXXXXXXXXXX-375-185.png"></image>
+    </div>
+  </div>
+</template>
+
+<style>
+  .cell { margin-top: 10; margin-left: 10; margin-bottom: 10; flex-direction: row; background-color: #ffffff; }
+  .thumb { width: 200; height: 200; border-radius: 30; }
+  .thumb-sub { width: 100; height: 100; margin-left: 10;}
+  .thumb-stretch { resize: stretch; opacity: 0.5; }
+  .thumb-contain { resize: contain; opacity: 0.75; }
+  .thumb-cover { resize: cover; }
+  .title { text-align: center; flex: 1; color: #808080; font-size: 50; }
+  .title-sub { width: 240; }
+  .title-sub1 { font-size: 28; color: #ff0000; font-style: normal; font-weight: normal; text-decoration: underline; text-align: left; text-overflow: ellipsis; lines: 1; }
+  .title-sub2 { font-size: 26; color: #00ff00; font-style: italic; font-weight: bold; text-decoration: overline; text-align: right; text-overflow: clip; }
+  .title-sub3 { font-size: 24; color: #0000ff; font-style: oblique; font-weight: bolder; text-decoration: line-through; text-align: center; text-overflow: string; }
+  .title-sub4 { font-size: 22; color: #ff00ff; font-style: inherit; font-weight: lighter; text-decoration: blink; text-align: justify; background-color: #aaaaaa; }
+  .bar { background-color: #00ffff; width: 100; height: 220; border-width: 10; border-top-width: 4; border-bottom-width: 4;
+    border-color: #ff0000; border-right-color: #0000ff; border-radius: 1; }
+</style>
+
+<script>
+  var globalEvent = require('@weex-module/globalEvent');
+  module.exports = {
+    data: {
+      stubHeight: 400
+    },
+    methods: {
+      logCreated: function(params) {
+        console.log('Lifecycle message of created from .we template', params);
+      },
+
+      logDestroyed: function(params) {
+        console.log('Lifecycle message of destroyed from .we template', params);
+      }
+    },
+
+    created: function() {
+    	var self = this;
+      	globalEvent.addEventListener("oreo_did_refresh", function (e) {
+
+        });
+        self.logCreated( {lifecycle: 'created'} );
+  	},
+
+  	destroyed: function () {
+      this.logDestroyed( {lefecycle: 'destroyed'} );
+  		globalEvent.removeEventListener("oreo_did_refresh");
+  	}
+  };
+</script>

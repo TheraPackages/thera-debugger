@@ -1,0 +1,13 @@
+{
+  "extensions": [
+
+  ],
+  "dependencies": [
+    "bindings",
+    "common",
+    "main"
+  ],
+  "scripts": [
+    "Main.js"
+  ]
+}

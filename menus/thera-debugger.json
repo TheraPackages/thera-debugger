@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle thera-debugger",
+        "command": "thera-debugger:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "thera-debugger",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "thera-debugger:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
