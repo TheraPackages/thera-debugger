@@ -64,21 +64,20 @@
         var i = 1;
         var j = 2.0;
         var k = 'kkk';
-        console.log('Thumb click counter=' + this.counter);
+        console.warn('Thumb click');
       }
     },
 
     created: function() {
     	var self = this;
-      	globalEvent.addEventListener("oreo_did_refresh", function (e) {
+    	globalEvent.addEventListener("oreo_did_refresh", function (e) {
 
-        });
-        self.logCreated( {lifecycle: 'created'} );
+      });
+      self.logCreated( {lifecycle: 'created'} );
   	},
 
   	destroyed: function () {
       this.logDestroyed( {lefecycle: 'destroyed'} );
-  		globalEvent.removeEventListener("oreo_did_refresh");
   	}
   };
 </script>
