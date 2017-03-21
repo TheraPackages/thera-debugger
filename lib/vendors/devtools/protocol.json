@@ -11986,6 +11986,16 @@
                         }
                     ],
                     "description": "Issued when new console message is added."
+                },
+                {
+                    "name": "messagesCleared",
+                    "parameters": [
+                        {
+                            "name": "message",
+                            "$ref": "ConsoleMessage",
+                            "description": "Console message that has been added."
+                        }
+                    ]
                 }
             ]
         },
