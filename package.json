@@ -18,7 +18,7 @@
     "tcp-port-used": "~0.1.2",
     "weex-devtool": "0.2.53",
     "ws": "1.1.1",
-    "thera-debug-common-types": "~0.1.8"
+    "thera-debug-common-types": "~0.2.3"
   },
   "providedServices": {
     "thera-debug-protocol": {
